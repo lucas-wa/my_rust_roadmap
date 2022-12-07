@@ -1,8 +1,14 @@
 fn main() {
 
-    let res = fatorial(5);
+    let s = String::from("Texto");
 
-    println!("{}", res);
+    ownership_move(s);
+
+
+    let n = 42;
+
+    ownership_copy(n);
+
 }
 
 
@@ -13,3 +19,13 @@ fn fatorial(n: i32) -> i32{
 
     fatorial(n-1)*n
 }
+
+fn ownership_copy(n : i32) -> i32 {
+    println!("{}", n);
+    n
+} 
+
+fn ownership_move(s : String) -> String {
+    println!("{}", s);
+    s
+} 
