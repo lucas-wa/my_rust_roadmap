@@ -1,3 +1,8 @@
+struct User {
+    name: String,
+    pass: String
+}
+
 fn main() {
 
     let s = String::from("Texto");
@@ -29,3 +34,10 @@ fn ownership_move(s : String) -> String {
     println!("{}", s);
     s
 } 
+
+fn create_user_struct(name: String, pass: "String"){
+    user {
+        name: String::from(name),
+        pass: String::from(pass)
+    }
+}
