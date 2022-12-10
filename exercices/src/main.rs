@@ -1,43 +1,45 @@
-struct User {
-    name: String,
-    pass: String
-}
+
 
 fn main() {
 
-    let s = String::from("Texto");
-
-    ownership_move(s);
-
-
-    let n = 42;
-
-    ownership_copy(n);
-
-}
-
-
-fn fatorial(n: i32) -> i32{
-    if n == 1 {
-        return 1
+    struct User {
+        name: String,
+        pass: String
     }
 
-    fatorial(n-1)*n
-}
+    fn create_user_struct(name: String, pass: String) -> User{
+ 
+        let user = User {
+            name,
+            pass
+        };
 
-fn ownership_copy(n : i32) -> i32 {
-    println!("{}", n);
-    n
-} 
-
-fn ownership_move(s : String) -> String {
-    println!("{}", s);
-    s
-} 
-
-fn create_user_struct(name: String, pass: "String"){
-    user {
-        name: String::from(name),
-        pass: String::from(pass)
+        user
+        
     }
+
+
+    let user1 = create_user_struct(String::from("Test"), String::from("Test"));
+
+    println!("{}", user1.name);
 }
+
+
+// fn fatorial(n: i32) -> i32{
+//     if n == 1 {
+//         return 1
+//     }
+
+//     fatorial(n-1)*n
+// }
+
+// fn ownership_copy(n : i32) -> i32 {
+//     println!("{}", n);
+//     n
+// } 
+
+// fn ownership_move(s : String) -> String {
+//     println!("{}", s);
+//     s
+// } 
+
