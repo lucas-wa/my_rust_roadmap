@@ -1,3 +1,4 @@
+#[derive(Debug)]
 
 struct Rectangle {
     lenght: u32,
@@ -12,20 +13,16 @@ impl Rectangle {
     fn can_hold(&self, other: &Rectangle) -> bool {
         self.width > other.width && self.lenght > other.lenght
     }
+
+    fn square(size: u32) -> Rectangle {
+        Rectangle { lenght: size, width: size }
+    }
 }
 
 fn main() {
-     let rect1 = Rectangle { 
-        lenght: 50, 
-        width: 30
-    };
+    let square1 = Rectangle::square(5);
 
-    let rect2 = Rectangle { 
-        lenght: 20, 
-        width: 10
-    };
-
-    println!("{}", rect1.can_hold(&rect2));
+    println!("{:#?}", square1);
 
 
 }
