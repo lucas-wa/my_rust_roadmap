@@ -25,4 +25,14 @@ fn main(){
             },
         }
     }
+
+    let coin = Coin::Quarter(State::Alabama)
+
+    let mut count = 0;
+
+    if let Coin::Quarter(state) = coin {
+        println!("Quarter do estado {:?}!", estado);
+    } else {
+        count+=1;
+    }
 }
